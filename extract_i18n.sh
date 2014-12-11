@@ -1,19 +1,19 @@
 #!/bin/bash
 find . -name '*.mo' -delete
-mkdir -p unicorecmsapp/locale
+mkdir -p unicorecmsstraighttalk/locale
 
-pot-create -o unicorecmsapp/locale/unicorecmsapp.pot unicorecmsapp/
+pot-create -o unicorecmsstraighttalk/locale/unicorecmsstraighttalk.pot unicorecmsstraighttalk/
 
 declare -a arr=("eng_GB")
 
 for lang in "${arr[@]}"
 do
-    mkdir -p "unicorecmsapp/locale/""$lang""/LC_MESSAGES"
+    mkdir -p "unicorecmsstraighttalk/locale/""$lang""/LC_MESSAGES"
 
-    if [ ! -f "unicorecmsapp/locale/""$lang""/LC_MESSAGES/unicorecmsapp.po" ]; then
-        msginit -l $lang -i unicorecmsapp/locale/unicorecmsapp.pot -o unicorecmsapp/locale/$lang/LC_MESSAGES/unicorecmsapp.po
+    if [ ! -f "unicorecmsstraighttalk/locale/""$lang""/LC_MESSAGES/unicorecmsstraighttalk.po" ]; then
+        msginit -l $lang -i unicorecmsstraighttalk/locale/unicorecmsstraighttalk.pot -o unicorecmsstraighttalk/locale/$lang/LC_MESSAGES/unicorecmsstraighttalk.po
     fi
 
-    msgmerge --update unicorecmsapp/locale/$lang/LC_MESSAGES/unicorecmsapp.po unicorecmsapp/locale/unicorecmsapp.pot
-    msgfmt unicorecmsapp/locale/$lang/LC_MESSAGES/*.po -o unicorecmsapp/locale/$lang/LC_MESSAGES/unicorecmsapp.mo
+    msgmerge --update unicorecmsstraighttalk/locale/$lang/LC_MESSAGES/unicorecmsstraighttalk.po unicorecmsstraighttalk/locale/unicorecmsstraighttalk.pot
+    msgfmt unicorecmsstraighttalk/locale/$lang/LC_MESSAGES/*.po -o unicorecmsstraighttalk/locale/$lang/LC_MESSAGES/unicorecmsstraighttalk.mo
 done

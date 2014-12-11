@@ -5,19 +5,19 @@ here = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(here, 'requirements.txt'), 'r') as fp:
     requires = filter(None, fp.readlines())
 
-setup(name='unicore-cms-straight-talk',
+setup(name='unicore-cms-straighttalk',
       version='0.1.0',
       description='GEM Pyramid Frontend Site for Universal Core ',
       long_description='GEM Pyramid Frontend Site for Universal Core ',
       classifiers=[
-      "Programming Language :: Python",
-      "Framework :: Pyramid",
-      "Topic :: Internet :: WWW/HTTP",
-      "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+          "Programming Language :: Python",
+          "Framework :: Pyramid",
+          "Topic :: Internet :: WWW/HTTP",
+          "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
       ],
       author='Praekelt Foundation',
       author_email='dev@praekelt.com',
-      url='http://github.com/universalcore/unicore-cms-straight-talk',
+      url='http://github.com/universalcore/unicore-cms-straighttalk',
       license='BSD',
       keywords='web pyramid pylons',
       packages=find_packages(),
@@ -25,13 +25,13 @@ setup(name='unicore-cms-straight-talk',
       zip_safe=False,
       install_requires=requires,
       tests_require=requires,
-      test_suite="unicorecmsapp",
+      test_suite="unicorecmsstraighttalk",
       entry_points="""\
       [paste.app_factory]
-      main = unicorecmsapp:main
+      main = unicorecmsstraighttalk:main
       """,
       message_extractors={'.': [
-      ('**.py', 'python', None),
-      ('**.pt', 'chameleon', None),
+          ('**.py', 'python', None),
+          ('**.pt', 'chameleon', None),
       ]},
       )

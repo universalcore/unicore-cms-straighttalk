@@ -1,4 +1,4 @@
-name: unicore-cms-straight-talk
+name: unicore-cms-straighttalk
 user: ubuntu
 buildscript: sideloader/deploy.sh
 postinstall: sideloader/postinstall.sh
